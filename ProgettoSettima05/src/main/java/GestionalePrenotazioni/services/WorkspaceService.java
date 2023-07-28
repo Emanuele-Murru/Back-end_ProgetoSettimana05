@@ -25,7 +25,7 @@ public class WorkspaceService {
 	}
 
 	public List<Workspace> findWorkspaceByCity(String city) {
-		List<Workspace> workspaces = workspaceRepo.findByCity(city);
+		List<Workspace> workspaces = workspaceRepo.findByBuildingCity(city);
 
 		if (workspaces.isEmpty()) {
 			log.info("NO worskpaces found in this city");

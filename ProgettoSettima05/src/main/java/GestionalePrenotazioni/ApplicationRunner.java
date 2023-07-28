@@ -32,17 +32,23 @@ public class ApplicationRunner implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
 		System.out.println("---------  USER  -------------");
+		
         System.out.println((config.user1().getUsername()));
         System.out.println((config.user1().getNameAndSurname()));
         System.out.println((config.user1().getEmail()));
+        
         userS.saveUser(config.user1());
         userS.saveUser(config.user2());
         userS.saveUser(config.user3());
+        
         System.out.println("---------  BUILDING  -------------");
+        
         System.out.println((config.building1().getName()));
         System.out.println((config.building1().getAddress()));
         System.out.println((config.building1().getCity()));
+        
         buildingS.saveBuilding(config.building1());
         buildingS.saveBuilding(config.building2());
         buildingS.saveBuilding(config.building3());
@@ -54,6 +60,7 @@ public class ApplicationRunner implements CommandLineRunner{
         System.out.println((config.workspace1().getType()));
         System.out.println((config.workspace1().getMaxCapacity()));
         System.out.println((config.workspace1().getBuilding()));
+        
         workspaceS.saveWorkspace(config.workspace1());
         workspaceS.saveWorkspace(config.workspace2());
         workspaceS.saveWorkspace(config.workspace3());
@@ -67,6 +74,7 @@ public class ApplicationRunner implements CommandLineRunner{
         System.out.println((config.booking1().getBookingDate()));
         System.out.println((config.booking1().getWorkspace()));
         System.out.println((config.booking1().getUser()));
+        
         bookingS.saveBooking(config.booking1());
         bookingS.saveBooking(config.booking2());
         bookingS.saveBooking(config.booking3());

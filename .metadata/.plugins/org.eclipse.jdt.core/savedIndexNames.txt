@@ -25,7 +25,6 @@ INDEX VERSION 1.134+C:\Users\emanu\Desktop\Epicode course\BACK-END\Back-end_Prog
 1130343297.index
 2497531692.index
 1297217580.index
-2666725303.index
 2681602529.index
 623437503.index
 289922161.index

@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import GestionalePrenotazioni.entities.Workspace;
 import GestionalePrenotazioni.utils.WorkspaceType;
 
+@Repository
 public interface WorkspaceRepository extends JpaRepository<Workspace, UUID> {
 
-	List<Workspace> findByCity(String cityBuilding);
+	List<Workspace> findByBuildingCity(String city);
 
 	List<Workspace> findByType(WorkspaceType type);
 }
