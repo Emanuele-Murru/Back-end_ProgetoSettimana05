@@ -63,7 +63,10 @@ public class ApplicationRunner implements CommandLineRunner{
         
         workspaceS.saveWorkspace(config.workspace1());
         workspaceS.saveWorkspace(config.workspace2());
-        workspaceS.saveWorkspace(config.workspace3());   
+        workspaceS.saveWorkspace(config.workspace3());
+        workspaceS.findWorkspaceByCity("Cagliari");
+        workspaceS.findWorkspaceByType(WorkspaceType.OPENSPACE);
+        
         
         System.out.println("---------  BOOKING  -------------");
         
@@ -76,10 +79,8 @@ public class ApplicationRunner implements CommandLineRunner{
         bookingS.saveBooking(config.booking2());
         bookingS.saveBooking(config.booking3());
         
-        System.out.println("---------- METODI ------------");
+        System.out.println("----------------------");
         
-        workspaceS.findWorkspaceByCity("Cagliari");
-        workspaceS.findWorkspaceByType(WorkspaceType.OPENSPACE);
         
 	}
 

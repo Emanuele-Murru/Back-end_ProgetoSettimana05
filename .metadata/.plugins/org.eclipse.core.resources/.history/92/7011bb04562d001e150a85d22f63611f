@@ -28,6 +28,4 @@ public class Booking {
 	private Workspace workspace;
 	@ManyToOne
 	private User user;
-	
-	private LocalDate expiryBookingDate;
 }

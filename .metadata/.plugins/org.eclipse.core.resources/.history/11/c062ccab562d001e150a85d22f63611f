@@ -56,7 +56,7 @@ public class BeansConfig {
 	
 	@Bean("booking2")
 	public Booking booking2() {
-		return Booking.builder().id(UUID.randomUUID()).bookingDate(LocalDate.of(2023, 7, 25)).workspace(workspace2()).user(user2()).expiryBookingDate(LocalDate.of(2023, 7, 25).plusDays(1)).build();
+		return Booking.builder().id(UUID.randomUUID()).bookingDate(LocalDate.of(2023, 7, 25)).workspace(workspace2()).user(user2()).build();
 	}
 	
 	// ====================================================================================
@@ -79,6 +79,6 @@ public class BeansConfig {
 	
 	@Bean("booking3")
 	public Booking booking3() {
-		return Booking.builder().id(UUID.randomUUID()).bookingDate(LocalDate.of(2023, 7, 25)).workspace(workspace3()).user(user3()).expiryBookingDate(LocalDate.of(2023, 7, 25).plusDays(1)).build();
+		return Booking.builder().id(UUID.randomUUID()).bookingDate(LocalDate.of(2023, 7, 25)).workspace(workspace3()).user(user3()).build();
 	}
 }
