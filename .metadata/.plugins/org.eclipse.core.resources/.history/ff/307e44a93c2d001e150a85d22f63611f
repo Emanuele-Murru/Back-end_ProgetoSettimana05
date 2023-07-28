@@ -1,0 +1,18 @@
+package GestionalePrenotazioni.repositories;
+
+//import java.util.List;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import GestionalePrenotazioni.entities.Workspace;
+//import GestionalePrenotazioni.utils.WorkspaceType;
+
+@Repository
+public interface WorkspaceRepository extends JpaRepository<Workspace, UUID> {
+
+//	List<Workspace> findByCountryBuilding(String country);
+//
+//	List<Workspace> findByWorkspaceByWorkspaceType(WorkspaceType type);
+
+}

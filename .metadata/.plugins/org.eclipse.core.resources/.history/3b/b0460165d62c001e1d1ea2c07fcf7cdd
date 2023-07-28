@@ -1,0 +1,6 @@
+package GestionalePrenotazioni;
+
+@Component
+public class ApplicationRunner implements CommandLineRunner{
+	
+}

@@ -1,0 +1,60 @@
+package GestionalePrenotazioni;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import GestionalePrenotazioni.BeansConfiguration.BeansConfig;
+import GestionalePrenotazioni.services.BookingService;
+import GestionalePrenotazioni.services.BuildingService;
+import GestionalePrenotazioni.services.UserService;
+import GestionalePrenotazioni.services.WorkspaceService;
+
+@Component
+public class ApplicationRunner implements CommandLineRunner{
+
+	@Autowired
+	private BeansConfig config;
+	
+	@Autowired
+	private UserService userS;
+	
+	@Autowired
+	private BuildingService buildingS;
+	
+	@Autowired
+	private WorkspaceService workspaceS;
+	
+	@Autowired
+	private BookingService bookingS;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("---------  USER  -------------");
+        System.out.println((config.user1().getUsername()));
+        System.out.println((config.user1().getNameAndSurname()));
+        System.out.println((config.user1().getEmail()));
+        userS.saveUser(config.user1());
+        System.out.println("---------  BUILDING  -------------");
+        System.out.println((config.building1().getName()));
+        System.out.println((config.building1().getAddress()));
+        System.out.println((config.building1().getCountry()));
+        buildingS.saveBuilding(config.building1());
+        System.out.println("---------  WORKSPACE  -------------");
+        System.out.println((config.workspace1().getId()));
+        System.out.println((config.workspace1().getDescription()));
+        System.out.println((config.workspace1().getType()));
+        System.out.println((config.workspace1().getMaxCapacity()));
+        System.out.println((config.workspace1().getBuilding()));
+        workspaceS.saveWorkspace(config.workspace1());
+        System.out.println("---------  BOOKING  -------------");
+        System.out.println((config.booking1().getId()));
+        System.out.println((config.booking1().getBookingDate()));
+        System.out.println((config.booking1().getWorkspace()));
+        System.out.println((config.booking1().getUser()));
+        bookingS.saveBooking(config.booking1());
+        System.out.println("---------  FIND USER BY ID  -------------");
+        
+	}
+
+}

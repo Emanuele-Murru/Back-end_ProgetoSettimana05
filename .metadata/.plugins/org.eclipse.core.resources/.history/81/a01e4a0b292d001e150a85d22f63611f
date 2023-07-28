@@ -1,0 +1,45 @@
+package GestionalePrenotazioni;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import GestionalePrenotazioni.BeansConfiguration.BeansConfig;
+import GestionalePrenotazioni.services.BookingService;
+import GestionalePrenotazioni.services.BuildingService;
+
+@Component
+public class ApplicationRunner implements CommandLineRunner{
+
+	@Autowired
+	private BeansConfig config;
+	
+	@Autowired
+	private BuildingService buildingS;
+	
+	@Autowired
+	private BookingService bookingS;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("---------  USER  -------------");
+        System.out.println((config.user1().getUsername()));
+        System.out.println((config.user1().getNameAndSurname()));
+        System.out.println((config.user1().getEmail()));
+        System.out.println("---------  BUILDING  -------------");
+        System.out.println((config.building1().getName()));
+        System.out.println((config.building1().getAddress()));
+        System.out.println((config.building1().getCountry()));
+        buildingS.saveBuilding(config.building1());
+        System.out.println("---------  WORKSPACE  -------------");
+        System.out.println((config.building1().getName()));
+        System.out.println((config.building1().getAddress()));
+        System.out.println((config.building1().getCountry()));
+        System.out.println("---------  BOOKING  -------------");
+        System.out.println((config.booking1().getId()));
+        System.out.println((config.booking1().getBookingDate()));
+        System.out.println((config.booking1().getWorkspace()));
+        System.out.println((config.booking1().getUser()));
+	}
+
+}

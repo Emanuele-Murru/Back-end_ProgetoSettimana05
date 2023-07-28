@@ -1,0 +1,5 @@
+package GestionalePrenotazioni.entities;
+
+public class User {
+	ciao
+}

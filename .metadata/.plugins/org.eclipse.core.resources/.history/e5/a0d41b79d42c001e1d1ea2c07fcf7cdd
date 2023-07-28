@@ -1,0 +1,9 @@
+package GestionalePrenotazioni.BeansConfiguration;
+
+@Configuration
+public class BeansConfig {
+	@Bean("user")
+	User getName() {
+		return 
+	}
+}

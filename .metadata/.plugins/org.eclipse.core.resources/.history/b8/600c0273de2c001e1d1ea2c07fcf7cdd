@@ -1,0 +1,12 @@
+package GestionalePrenotazioni.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import GestionalePrenotazioni.repositories.BuildingRepository;
+
+@Service
+public class BuildingService {
+	@Autowired
+	private BuildingRepository buildingRepo;
+}

@@ -1,0 +1,37 @@
+package GestionalePrenotazioni.BeansConfiguration;
+
+import java.time.LocalDate;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import GestionalePrenotazioni.entities.Booking;
+import GestionalePrenotazioni.entities.Building;
+import GestionalePrenotazioni.entities.User;
+import GestionalePrenotazioni.entities.Workspace;
+import GestionalePrenotazioni.utils.WorkspaceType;
+
+@Configuration
+public class BeansConfig {
+	
+	@Bean("user1")
+	public User user1() {
+		return User.builder().username("emanuele.murru").nameAndSurname("Emanuele Murru").email("manu@manu.com")
+				.build();
+	}
+	
+	@Bean("building1")
+	public Building building1() {
+		return Building.builder().name("Roxy Bar").address("Via le dita dal naso").country("Cagliari").build();
+	}
+	
+	@Bean("workspace1")
+	public Workspace workspace1() {
+		return Workspace.builder().description("Cozy and Quiet").type(WorkspaceType.OPENSPACE).maxCapacity(30).building(building1()).build();
+	}
+	
+	@Bean("booking1")
+	public Booking booking1() {
+		return Booking.builder().bookingDate(LocalDate.now()).workspace(workspace1()).user(user1()).build();
+	}
+}

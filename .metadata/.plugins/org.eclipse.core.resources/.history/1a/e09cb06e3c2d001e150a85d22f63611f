@@ -1,0 +1,16 @@
+package GestionalePrenotazioni.repositories;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import GestionalePrenotazioni.entities.Booking;
+import GestionalePrenotazioni.entities.User;
+
+public interface BookingRepository extends JpaRepository<Booking, UUID> {
+	List<Booking> findByUser(User user);
+	
+	boolean existsByUserAndBookingData(User user, LocalDate bookingDate);
+}

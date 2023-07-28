@@ -1,0 +1,21 @@
+package GestionalePrenotazioni.BeansConfiguration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import GestionalePrenotazioni.entities.Building;
+import GestionalePrenotazioni.entities.User;
+
+@Configuration
+public class BeansConfig {
+	@Bean("user1")
+	public User user1() {
+		return User.builder().username("emanuele.murru").nameAndSurname("Emanuele Murru").email("manu@manu.com")
+				.build();
+	}
+	
+	@Bean("building1")
+	public Building building1() {
+		return Building.builder().name("Roxy Bar").address("Via le dita dal naso").country("Cagliari").build();
+	}
+}

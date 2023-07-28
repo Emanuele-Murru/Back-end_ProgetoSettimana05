@@ -1,0 +1,35 @@
+package GestionalePrenotazioni.services;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import GestionalePrenotazioni.entities.Workspace;
+import GestionalePrenotazioni.repositories.WorkspaceRepository;
+import GestionalePrenotazioni.utils.WorkspaceType;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class WorkspaceService {
+
+	@Autowired
+	private WorkspaceRepository workspaceRepo;
+
+	public void saveWorkspace(Workspace workspace) {
+		
+		workspaceRepo.save(workspace);
+		log.info(workspace.getId() + " - " + workspace.getDescription() + " - " + workspace.getType() + " - "
+				+ workspace.getMaxCapacity() + " - " + workspace.getBuilding() + " => " + " Saved on DB!");
+	}	
+	
+	public List<Workspace> getWorkspaceByCountry(String country) {
+		return workspaceRepo.findByCountryBuilding(country);
+	}
+	
+	public List<Workspace> getWorkspaceByWorkspaceType(WorkspaceType type) {
+		return workspaceRepo.findByWorkspaceType(type);
+	}
+}

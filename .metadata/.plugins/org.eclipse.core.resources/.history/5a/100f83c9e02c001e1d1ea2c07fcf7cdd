@@ -1,0 +1,20 @@
+package GestionalePrenotazioni.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import GestionalePrenotazioni.entities.Booking;
+import GestionalePrenotazioni.entities.Workspace;
+
+@Service
+public class WorkspaceService {
+
+	@Autowired
+	private Workspace workspaceRepo;
+	
+	public void saveWorkspace(Workspace workspace) {
+		bookingRepo.save(booking);
+		log.info(booking.getId() + "" + booking.getBookingDate() + "" + booking.getWorkspace() + "" + booking.getUser()
+				+ "" + "\n Saved on DB!");
+	}
+}

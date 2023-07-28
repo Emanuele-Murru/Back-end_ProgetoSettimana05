@@ -1,0 +1,21 @@
+package GestionalePrenotazioni.entities;
+
+import org.springframework.data.annotation.Id;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+	@Id
+	private String username;
+	private String nameAndSurname;
+	private String email;
+}

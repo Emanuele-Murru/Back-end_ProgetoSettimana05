@@ -1,0 +1,11 @@
+package GestionalePrenotazioni.repositories;
+
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import GestionalePrenotazioni.entities.Workspace;
+
+public interface WorkspaceRepository extends JpaRepository<Workspace, UUID> {
+
+}

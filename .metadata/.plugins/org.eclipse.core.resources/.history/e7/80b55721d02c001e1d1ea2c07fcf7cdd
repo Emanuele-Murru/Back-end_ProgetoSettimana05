@@ -1,0 +1,14 @@
+package GestionalePrenotazioni.entities;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Building {
+	private String name;
+	private String address;
+	private String country;
+	
+	
+}

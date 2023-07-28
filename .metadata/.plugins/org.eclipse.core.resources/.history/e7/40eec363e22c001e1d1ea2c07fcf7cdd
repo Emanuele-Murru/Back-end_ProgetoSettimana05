@@ -1,0 +1,22 @@
+package GestionalePrenotazioni.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import GestionalePrenotazioni.entities.Booking;
+import GestionalePrenotazioni.repositories.BookingRepository;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+@Service
+public class BookingService {
+
+	@Autowired
+	private BookingRepository bookingRepo;
+
+	public void saveBooking(Booking booking) {
+		bookingRepo.save(booking);
+		log.info(booking.getId() + "" + booking.getBookingDate() + "" + booking.getWorkspace() + "" + booking.getUser()
+				+ "" + "\n Saved on DB!");
+	}
+}

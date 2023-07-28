@@ -1,0 +1,9 @@
+package GestionalePrenotazioni.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import GestionalePrenotazioni.entities.User;
+
+public interface UserRepository extends JpaRepository<User, String> {
+
+}
